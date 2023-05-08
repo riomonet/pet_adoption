@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}pet detail{% endblock %}
+
+{% block content%}
+
+
+<h1 class="display-2 text-center">{{pet.name}}</h1>
+<ul>
+    
+    <li>SPECIES - {{pet.species}}</li>
+    <li>URL     - {{pet.img_url}}</li>
+    <li>AGE     - {{pet.age}}</li>
+    <li>COMMENT - {{pet.comment}}</li>
+</ul>
+
+
+
+<form class="text-center">
+    <input class="btn" formaction="/pets/{{pet.id}}/edit" value="Edit" type="submit"></input>
+</form>
+
+
+<a class ="btn text-center" href="/">Goto Main List</a>
+</div>
+{% endblock %}

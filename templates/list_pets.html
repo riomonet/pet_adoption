@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}user list{% endblock %}
+
+{% block content%}
+
+
+<h1 class="display-4 text-center">Pets for adoption</h1>
+
+<div class="container">
+    <ul class="list-group">
+
+	{% for pet in pets %}
+	
+	<li class="list-group-item text-center"> <a href="/pets/{{pet.id}}">{{pet.name}}</a>
+	    {% if pet.available%} <span class=><b> is Available</b></span> {% endif %}
+	</li>
+
+	{% endfor %}
+	
+    </ul>
+</div>
+
+<br>
+<a href="/add" class="btn btn-success btn-lg">Add Pet</a>
+
+{% endblock %}
+
